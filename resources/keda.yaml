@@ -1,0 +1,25 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: helm-guestbook-so
+  namespace: helm-guestbook
+  labels:
+spec:
+  cooldownPeriod: 300
+  maxReplicaCount: 5
+  minReplicaCount: 2
+  pollingInterval: 30
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    envSourceContainerName: app
+    name: helm-guestbook
+  fallback:
+    failureThreshold: 5
+    replicas: 6
+  
+  triggers:
+  - type: cpu
+    metadata:
+      type: Utilization
+      value: "30"
