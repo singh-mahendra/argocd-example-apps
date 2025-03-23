@@ -4,7 +4,7 @@
 
 
 image:
-  repository: mahsingh30/node-app:0.0.1
+  repository: mahsingh30/node-app
   tag: latest
   pullPolicy: IfNotPresent
 
