@@ -4,8 +4,8 @@
 
 
 image:
-  repository: gcr.io/heptio-images/ks-guestbook-demo
-  tag: 0.1
+  repository: mahsingh30/node-app:0.0.1
+  tag: latest
   pullPolicy: IfNotPresent
 
 containerPort: 80
